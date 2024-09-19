@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vyapar/view/home.dart';
+import 'package:vyapar/view/home/home.dart';
 
 void main() {
   runApp(MyApp());
