@@ -18,7 +18,7 @@ class _CustomPageViewState extends State<CustomPageView> {
     return Column(
       children: [
         SizedBox(
-          height: screenSize.height * 0.32,
+          height: screenSize.height * 0.25,
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: [
@@ -39,7 +39,8 @@ class _CustomPageViewState extends State<CustomPageView> {
                       gradient: const LinearGradient(
                         colors: [
                           Color(0xFFD97291), // light pink at the left
-                          Color.fromARGB(255, 141, 38, 76), // dark pink at the right
+                          Color.fromARGB(
+                              255, 141, 38, 76), // dark pink at the right
                         ],
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
@@ -65,10 +66,12 @@ class _CustomPageViewState extends State<CustomPageView> {
                               ),
                               Container(
                                 padding: const EdgeInsets.symmetric(
-                                    horizontal: 20.0, vertical: 4.0), // decreased padding
+                                    horizontal: 20.0,
+                                    vertical: 4.0), // decreased padding
                                 decoration: ShapeDecoration(
                                   color: Colors.green[100], // background color
-                                  shape: const StadiumBorder(), // Stadium border for shape
+                                  shape:
+                                      const StadiumBorder(), // Stadium border for shape
                                 ),
                                 child: const Text(
                                   'HURRY UP!', // heading with "Hurry up" in green
@@ -81,7 +84,7 @@ class _CustomPageViewState extends State<CustomPageView> {
                               )
                             ],
                           ),
-                          SizedBox(height: screenSize.height * .05),
+                          SizedBox(height: screenSize.height * .01),
                           const Text(
                             'Now, become a Premium Vyapari and get\nexclusive benefits at up to 60% off.',
                             style: TextStyle(
@@ -89,7 +92,7 @@ class _CustomPageViewState extends State<CustomPageView> {
                               fontSize: 14,
                             ),
                           ),
-                          SizedBox(height: screenSize.height * .04),
+                          SizedBox(height: screenSize.height * .01),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -106,7 +109,8 @@ class _CustomPageViewState extends State<CustomPageView> {
                                 child: const Text(
                                   'Buy Now',
                                   style: TextStyle(
-                                    color: Color(0xFF0033A0), // Replace with your color
+                                    color: Color(
+                                        0xFF0033A0), // Replace with your color
                                   ),
                                 ),
                               ),
@@ -141,9 +145,10 @@ class _CustomPageViewState extends State<CustomPageView> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(5.0),
                                 decoration: BoxDecoration(
-                                    color: Colors.orange, // orange background for icon
+                                    color: Colors
+                                        .orange, // orange background for icon
                                     borderRadius: BorderRadius.circular(5)),
                                 child: const Row(
                                   children: [
@@ -163,9 +168,9 @@ class _CustomPageViewState extends State<CustomPageView> {
                               ),
                             ],
                           ),
-                          SizedBox(height: screenSize.height * .06),
+                          SizedBox(height: screenSize.height * .01),
                           const Text(
-                            'Become a premium Vyapari and get exclusive\naccess to most important reports, features, settings\nand grow your business.',
+                            'Become a premium Vyapari and get exclusive\naccess to most important reports, features, settings and grow your business.',
                             style: TextStyle(
                               color: Colors.white70,
                               fontSize: 13.5,
@@ -184,14 +189,16 @@ class _CustomPageViewState extends State<CustomPageView> {
           mainAxisAlignment: MainAxisAlignment.center, // Center the dots
           children: List.generate(2, (index) {
             return Container(
-              margin: const EdgeInsets.symmetric(horizontal: 8), // Space between dots
+              margin: const EdgeInsets.symmetric(
+                  horizontal: 8), // Space between dots
               width: 20, // Width of the stadium shape
               height: 4, // Height of the stadium shape
               decoration: BoxDecoration(
                 color: _currentPage == index
                     ? const Color(0xFF0033A0) // Active dot color
                     : Colors.grey[400], // Inactive dot color
-                borderRadius: BorderRadius.circular(12), // Makes the shape more like a stadium
+                borderRadius: BorderRadius.circular(
+                    12), // Makes the shape more like a stadium
               ),
             );
           }),

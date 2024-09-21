@@ -1,8 +1,9 @@
-
 import 'package:flutter/material.dart';
-import 'package:vyapar/view/menu_screen/widgets/aadd_sales.dart';
+import 'package:get/get.dart';
+import 'package:vyapar/controller/home_controller/home_controller.dart';
+import 'package:vyapar/view/menu_screen/sales_return/add_sale/add_sales.dart';
 
-class SaleInvoiceScreen extends StatelessWidget {
+class SaleListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Get screen width and height using MediaQuery
@@ -42,9 +43,9 @@ class SaleInvoiceScreen extends StatelessWidget {
           gradient: LinearGradient(
             colors: [
               Colors.lightBlue.shade100,
-              Colors.lightBlue.shade50, // Very light blue at the top
               Colors.lightBlue.shade50,
-              Colors.lightBlue.shade50, // Very light blue at the top
+              Colors.lightBlue.shade50,
+              Colors.lightBlue.shade50,
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -54,15 +55,13 @@ class SaleInvoiceScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              height:
-                  screenHeight * .1, // Set a normal height for the container
-              width:
-                  double.infinity, // Set the width to take full available width
+              height: screenHeight * .11,
+              width: double.infinity,
               margin: EdgeInsets.symmetric(
-                horizontal: 16.0, // Fixed margin
-                vertical: 10.0, // Fixed vertical margin
+                horizontal: 16.0,
+                vertical: 10.0,
               ),
-              padding: EdgeInsets.all(16.0), // Fixed padding
+              padding: EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
@@ -115,8 +114,7 @@ class SaleInvoiceScreen extends StatelessWidget {
             icon: Icon(Icons.add, color: Colors.white),
             label: Text('Add Sale',
                 style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.white)), // Adjust label size
+                    fontSize: 14, color: Colors.white)), // Adjust label size
             shape: StadiumBorder(), // Stadium border shape
           ),
         ),
