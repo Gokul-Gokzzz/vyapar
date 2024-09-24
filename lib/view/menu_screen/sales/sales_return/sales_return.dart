@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:vyapar/view/menu_screen/sales_return/credit_note/credit_note.dart';
+import 'package:vyapar/view/menu_screen/sales/sales_return/credit_note.dart';
 
 class SaleReturnScreen extends StatefulWidget {
   @override
@@ -75,7 +75,8 @@ class _SaleReturnScreenState extends State<SaleReturnScreen> {
                   setState(() {
                     selectedRange = 'This Financial Year';
                     final now = DateTime.now();
-                    startDate = DateTime(now.year, 4, 1); // Assuming financial year starts in April
+                    startDate = DateTime(now.year, 4,
+                        1); // Assuming financial year starts in April
                     endDate = DateTime(now.year + 1, 3, 31);
                   });
                   Navigator.pop(context);
@@ -99,10 +100,9 @@ class _SaleReturnScreenState extends State<SaleReturnScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Sale Return'),
-        centerTitle: true,
-        backgroundColor: Colors.white
-      ),
+          title: Text('Sale Return'),
+          centerTitle: true,
+          backgroundColor: Colors.white),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -111,7 +111,6 @@ class _SaleReturnScreenState extends State<SaleReturnScreen> {
             color: Colors.black,
             indent: 15,
             endIndent: 15,
-            
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -123,17 +122,21 @@ class _SaleReturnScreenState extends State<SaleReturnScreen> {
                   children: [
                     Text(
                       selectedRange,
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
-                    Icon(Icons.keyboard_arrow_down_outlined, color: Colors.blue),
+                    Icon(Icons.keyboard_arrow_down_outlined,
+                        color: Colors.blue),
                     VerticalDivider(
                       color: Colors.black,
-                      
-                      
                     ),
                     Row(
                       children: [
-                        Icon(Icons.calendar_today, color: Colors.blue,size: 18,),
+                        Icon(
+                          Icons.calendar_today,
+                          color: Colors.blue,
+                          size: 18,
+                        ),
                         SizedBox(width: 3),
                         Text(DateFormat('dd/MM/yyyy').format(startDate)),
                         Text(" TO "),
@@ -145,98 +148,101 @@ class _SaleReturnScreenState extends State<SaleReturnScreen> {
               ),
             ),
           ),
-          Divider( color: Colors.black,
+          Divider(
+            color: Colors.black,
             indent: 15,
-            endIndent: 15,),
-        SizedBox(height: 10,),
+            endIndent: 15,
+          ),
+          SizedBox(
+            height: 10,
+          ),
           // Placeholder for No Data Available
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                _buildSummaryCard('No of Txns', '1'),
-                _buildSummaryCard('Total Sale Return', '₹ 10000.00'),
-                _buildSummaryCard('Balance Due', '₹ 0.00'),
-              ],
-            ),
-            SizedBox(height: 16),
-            
-            Expanded(
-              child: ListView.builder(
-                itemCount: 1,
-                itemBuilder: (context, index) {
-                  return Card(
-                    color: Colors.white,
-                    margin: EdgeInsets.symmetric(vertical: 8.0),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Gokul',
-                                style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold),
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    'SALE 1',
-                                    style: TextStyle(color: Colors.grey),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _buildSummaryCard('No of Txns', '1'),
+              _buildSummaryCard('Total Sale Return', '₹ 10000.00'),
+              _buildSummaryCard('Balance Due', '₹ 0.00'),
+            ],
+          ),
+          SizedBox(height: 16),
+
+          Expanded(
+            child: ListView.builder(
+              itemCount: 1,
+              itemBuilder: (context, index) {
+                return Card(
+                  color: Colors.white,
+                  margin: EdgeInsets.symmetric(vertical: 8.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Gokul',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  'SALE 1',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                                Text(
+                                  '12 SEP, 24',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Amount'),
+                                SizedBox(height: 4),
+                                Text(
+                                  '₹ 10000.00',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Balance'),
+                                SizedBox(height: 4),
+                                Text(
+                                  '₹ 0.00',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors
+                                        .green, // Apply green color only to 0.00 text
                                   ),
-                                  Text(
-                                    '12 SEP, 24',
-                                    style: TextStyle(color: Colors.grey),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Amount'),
-                                  SizedBox(height: 4),
-                                  Text(
-                                    '₹ 10000.00',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Balance'),
-                                  SizedBox(height: 4),
-                                  Text(
-                                    '₹ 0.00',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors
-                                          .green, // Apply green color only to 0.00 text
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                  );
-                },
-              ),
+                  ),
+                );
+              },
             ),
+          ),
           Spacer(),
         ],
       ),
@@ -247,7 +253,12 @@ class _SaleReturnScreenState extends State<SaleReturnScreen> {
             left: MediaQuery.of(context).size.width / 2 - 50,
             child: FloatingActionButton.extended(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>CreditNoteScreen(),),);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CreditNoteScreen(),
+                  ),
+                );
               },
               icon: Icon(Icons.add),
               label: Text('Add Sale'),
@@ -258,7 +269,7 @@ class _SaleReturnScreenState extends State<SaleReturnScreen> {
       ),
     );
   }
-  
+
   Widget _buildSummaryCard(String title, String value, {Color? color}) {
     return Expanded(
       child: Container(

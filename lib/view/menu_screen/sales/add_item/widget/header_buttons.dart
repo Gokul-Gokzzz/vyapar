@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vyapar/utils/colors.dart';
 import 'package:vyapar/utils/text_style.dart';
 
-
-
 class HeaderButtons extends StatelessWidget {
   HeaderButtons(
       {super.key,
@@ -36,8 +34,10 @@ class HeaderButtons extends StatelessWidget {
               child: Text(
             butnTxt ?? "Transaction Details",
             style: index == selectedIndex
-                ? interFontBlack(fontsize: 13.sp, color: Colorconst.cRed)
-                : interFontGrey(fontsize: 13.sp, color: Colorconst.cGrey),
+                ? interFontBlack(
+                    fontsize: 13.sp, color: Colorconst.cRed, context)
+                : interFontGrey(
+                    fontsize: 13.sp, color: Colorconst.cGrey, context),
           )),
         ),
       ),

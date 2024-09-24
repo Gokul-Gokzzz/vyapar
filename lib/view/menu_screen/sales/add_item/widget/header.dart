@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vyapar/utils/colors.dart';
 import 'package:vyapar/utils/text_style.dart';
 
-
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({super.key});
 
@@ -51,7 +50,7 @@ class HeaderWidget extends StatelessWidget {
             ),
             Text(
               "xianinfotech LLP",
-              style: interFontBlack(fontsize: 20.sp),
+              style: interFontBlack(fontsize: 20.sp, context),
             ),
             Expanded(
                 child: Row(

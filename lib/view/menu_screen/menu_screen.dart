@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vyapar/view/menu_screen/sales/delivery_challan/delivery_challan.dart';
+import 'package:vyapar/view/menu_screen/sales/estimate_details/estimate_details.dart';
+import 'package:vyapar/view/menu_screen/sales/sales_return/sales_return.dart';
 import 'package:vyapar/view/menu_screen/widgets/custom_page_view.dart';
 
 class MenuScreen extends StatefulWidget {
@@ -88,23 +91,44 @@ class _MenuScreenState extends State<MenuScreen> {
       {
         'icon': Icons.assignment_return,
         'label': 'Sale Return',
-        'onTap': () {/* Your onTap  */}
+        'onTap': () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SaleReturnScreen(),
+            ),
+          );
+        }
       },
       {
         'icon': Icons.local_shipping,
         'label': 'Delivery Challan',
-        'onTap': () {/* Your onTap  */}
+        'onTap': () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DeliveryChallanDetails(),
+            ),
+          );
+        }
       },
       {
         'icon': Icons.receipt,
         'label': 'Estimate/Quotation',
-        'onTap': () {/* Your onTap  */}
+        'onTap': () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => EstimateDetailsScreen(),
+            ),
+          );
+        }
       },
-      {
-        'icon': Icons.description,
-        'label': 'Proforma Invoice',
-        'onTap': () {/* Your onTap  */}
-      },
+      // {
+      //   'icon': Icons.description,
+      //   'label': 'Proforma Invoice',
+      //   'onTap': () {/* Your onTap  */}
+      // },
       {
         'icon': Icons.receipt_long,
         'label': 'Sale Invoice',
@@ -118,7 +142,6 @@ class _MenuScreenState extends State<MenuScreen> {
     ]);
   }
 
-// Example usage for Purchase Transs
   void _showPurchasePopup(BuildContext context) {
     _showCustomPopup(context, [
       {
@@ -144,7 +167,6 @@ class _MenuScreenState extends State<MenuScreen> {
     ]);
   }
 
-// Example usage for Backup and Restore
   void _showBackupRestorePopup(BuildContext context) {
     _showCustomPopup(context, [
       {
@@ -170,7 +192,6 @@ class _MenuScreenState extends State<MenuScreen> {
     ]);
   }
 
-// Example usage for Utilities
   void _showUtilitiesPopup(BuildContext context) {
     _showCustomPopup(context, [
       {
@@ -233,7 +254,7 @@ class _MenuScreenState extends State<MenuScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
+    // final Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -405,17 +426,17 @@ class _MenuScreenState extends State<MenuScreen> {
                     // crossAxisSpacing: 16,
                     // mainAxisSpacing: 16,
                     children: [
-                      _buildGridItem(
+                      buildGridItem(
                           Icons.blinds_closed_rounded, 'Invoice', () {}),
-                      _buildGridItem(
+                      buildGridItem(
                           Icons.inventory_2_outlined, 'Quotation', () {}),
-                      _buildGridItem(
+                      buildGridItem(
                           Icons.timelapse_outlined, 'Delivery Challan', () {}),
-                      _buildGridItem(
+                      buildGridItem(
                           Icons.auto_graph_sharp, 'Credit Note', () {}),
-                      _buildGridItem(Icons.business_center_outlined,
+                      buildGridItem(Icons.business_center_outlined,
                           'Purchase Order', () {}),
-                      _buildGridItem(
+                      buildGridItem(
                           Icons.card_membership, 'Pro Forma Invoice', () {}),
                     ],
                   ),
@@ -456,18 +477,17 @@ class _MenuScreenState extends State<MenuScreen> {
                     // crossAxisSpacing: 16,
                     // mainAxisSpacing: 16,
                     children: [
-                      _buildGridItem(Icons.currency_rupee_sharp, 'Sale', () {
+                      buildGridItem(Icons.currency_rupee_sharp, 'Sale', () {
                         _showSalePopup(context);
                       }),
-                      _buildGridItem(Icons.shopping_cart_outlined, 'Purchase',
+                      buildGridItem(Icons.shopping_cart_outlined, 'Purchase',
                           () {
                         _showPurchasePopup(context);
                       }),
-                      _buildGridItem(
-                          Icons.note_alt_outlined, 'Expenses', () {}),
-                      _buildGridItem(
+                      buildGridItem(Icons.note_alt_outlined, 'Expenses', () {}),
+                      buildGridItem(
                           Icons.home_outlined, 'My Online Store', () {}),
-                      _buildGridItem(Icons.note_outlined, 'Report', () {}),
+                      buildGridItem(Icons.note_outlined, 'Report', () {}),
                     ],
                   ),
                 ],
@@ -507,19 +527,19 @@ class _MenuScreenState extends State<MenuScreen> {
                     // crossAxisSpacing: 16,
                     // mainAxisSpacing: 16,
                     children: [
-                      _buildGridItem(
+                      buildGridItem(
                           Icons.blinds_closed_rounded, 'E-Way Bill', () {}),
-                      _buildGridItem(
+                      buildGridItem(
                           Icons.inventory_2_outlined, 'E-Invoice', () {}),
-                      _buildGridItem(
+                      buildGridItem(
                           Icons.timelapse_outlined, 'Payment Timeline', () {}),
-                      _buildGridItem(Icons.auto_graph_sharp, 'Insights', () {}),
-                      _buildGridItem(Icons.business_center_outlined,
+                      buildGridItem(Icons.auto_graph_sharp, 'Insights', () {}),
+                      buildGridItem(Icons.business_center_outlined,
                           'Business Card', () {}),
-                      _buildGridItem(Icons.card_membership, 'Greetings', () {}),
-                      _buildGridItem(Icons.business_center_outlined,
+                      buildGridItem(Icons.card_membership, 'Greetings', () {}),
+                      buildGridItem(Icons.business_center_outlined,
                           'Invoice Templates', () {}),
-                      _buildGridItem(Icons.document_scanner_outlined,
+                      buildGridItem(Icons.document_scanner_outlined,
                           'Document Settings', () {}),
                     ],
                   ),
@@ -560,15 +580,15 @@ class _MenuScreenState extends State<MenuScreen> {
                     crossAxisSpacing: 16,
                     // mainAxisSpacing: 16,
                     children: [
-                      _buildGridItem(Icons.account_balance_outlined,
+                      buildGridItem(Icons.account_balance_outlined,
                           'Bank Accounts', () {}),
-                      _buildGridItem(Icons.account_balance_wallet_outlined,
+                      buildGridItem(Icons.account_balance_wallet_outlined,
                           'Cash In-Hand', () {}),
-                      _buildGridItem(
+                      buildGridItem(
                           Icons.manage_history_sharp, 'Icons.notes', () {}),
-                      _buildGridItem(Icons.playlist_add_circle_outlined,
+                      buildGridItem(Icons.playlist_add_circle_outlined,
                           'Loan Account', () {}),
-                      _buildGridItem(
+                      buildGridItem(
                           Icons.currency_rupee_outlined, 'Apply Loan', () {}),
                     ],
                   ),
@@ -609,14 +629,14 @@ class _MenuScreenState extends State<MenuScreen> {
                     // crossAxisSpacing: 16,
                     // mainAxisSpacing: 16,
                     children: [
-                      _buildGridItem(Icons.sync, 'Sync & Share', () {}),
-                      _buildGridItem(Icons.manage_history_sharp,
+                      buildGridItem(Icons.sync, 'Sync & Share', () {}),
+                      buildGridItem(Icons.manage_history_sharp,
                           'Manage Companies', () {}),
-                      _buildGridItem(Icons.settings_backup_restore_outlined,
+                      buildGridItem(Icons.settings_backup_restore_outlined,
                           'Backup/Restore', () {
                         _showBackupRestorePopup(context);
                       }),
-                      _buildGridItem(Icons.shopping_bag_outlined, 'Utilities',
+                      buildGridItem(Icons.shopping_bag_outlined, 'Utilities',
                           () {
                         _showUtilitiesPopup(context);
                       }),
@@ -659,23 +679,22 @@ class _MenuScreenState extends State<MenuScreen> {
                     crossAxisSpacing: 16,
                     mainAxisSpacing: 16,
                     children: [
-                      _buildGridItem(Icons.account_balance_outlined,
+                      buildGridItem(Icons.account_balance_outlined,
                           'Vyapar Premium', () {}),
-                      _buildGridItem(Icons.account_balance_wallet_outlined,
+                      buildGridItem(Icons.account_balance_wallet_outlined,
                           'Get Desktop Billing Software', () {}),
-                      _buildGridItem(Icons.view_comfortable_rounded,
+                      buildGridItem(Icons.view_comfortable_rounded,
                           'Other Products', () {}),
-                      _buildGridItem(
+                      buildGridItem(
                           Icons.phone_enabled, 'Greeting & Offers', () {}),
-                      _buildGridItem(
-                          Icons.settings_outlined, 'Settings', () {}),
-                      _buildGridItem(
+                      buildGridItem(Icons.settings_outlined, 'Settings', () {}),
+                      buildGridItem(
                           Icons.wallet_giftcard_rounded, 'Refer & Earn', () {}),
-                      _buildGridItem(
+                      buildGridItem(
                           Icons.headset_mic_outlined, 'Help & Support', () {
                         _showHelpSupportPopup(context);
                       }),
-                      _buildGridItem(
+                      buildGridItem(
                           Icons.star_border_outlined, 'Rate This App', () {}),
                     ],
                   ),
@@ -689,7 +708,7 @@ class _MenuScreenState extends State<MenuScreen> {
   }
 }
 
-Widget _buildGridItem(IconData icon, String label, VoidCallback onTap) {
+Widget buildGridItem(IconData icon, String label, VoidCallback onTap) {
   return GestureDetector(
     onTap: onTap,
     child: Column(

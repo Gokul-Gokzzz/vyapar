@@ -8,6 +8,7 @@ class ExpandableRow extends StatelessWidget {
   final Widget? expandedContent;
 
   const ExpandableRow({
+    super.key,
     required this.icon,
     required this.text,
     required this.isExpanded,
@@ -25,15 +26,13 @@ class ExpandableRow extends StatelessWidget {
           title: Text(text),
           trailing: Icon(
             isExpanded ? Icons.arrow_circle_up : Icons.arrow_circle_down,
-            color: isExpanded
-                ? Colors.blue // Replace with ColorConstants.primaryBlue
-                : Colors.grey, // Replace with ColorConstants.lightGrey
+            color: isExpanded ? Colors.blue : Colors.grey,
           ),
           onTap: onTap,
         ),
         Container(
-          padding: EdgeInsets.only(left: 72.0, top: 8.0),
-          child: expandedContent ?? SizedBox.shrink(),
+          padding: const EdgeInsets.only(left: 72.0, top: 8.0),
+          child: expandedContent ?? const SizedBox.shrink(),
         ),
       ],
     );

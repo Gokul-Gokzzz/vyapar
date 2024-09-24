@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vyapar/controller/home_controller/home_controller.dart';
-import 'package:vyapar/database/database.dart';
 import 'package:vyapar/view/home/home.dart';
+import 'package:vyapar/view/menu_screen/menu_screen.dart';
+import 'package:vyapar/view/menu_screen/sales/add_sale/add_sales.dart';
+import 'package:vyapar/view/menu_screen/sales/delivery_challan/delivery_challan.dart';
+import 'package:vyapar/view/menu_screen/sales/estimate_details/estimate_quotation.dart';
+import 'package:vyapar/view/menu_screen/sales/estimate_details/estimate_details.dart';
+import 'package:vyapar/view/menu_screen/sales/sale_list.dart';
+import 'package:vyapar/view/menu_screen/sales/sales_order/sale-order.dart';
+import 'package:vyapar/view/menu_screen/sales/sales_return/credit_note.dart';
 
 void main() {
   // final Repository repository = Repository() ;
@@ -20,17 +27,17 @@ class MyApp extends StatelessWidget {
       designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (_ , child) {
+      builder: (_, child) {
         return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
-          ),
-          home: HomeScreen(),
-        );
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+              textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+            ),
+            home: SaleOrderScreen()
+            // MenuScreen()
+            );
       },
-     
     );
   }
 }

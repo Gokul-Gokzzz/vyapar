@@ -3,10 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vyapar/utils/colors.dart';
 import 'package:vyapar/utils/text_style.dart';
 
-
 class AddItemButton extends StatelessWidget {
-   AddItemButton({super.key,this.onTap});
-final Function()?onTap;
+  AddItemButton({super.key, this.onTap});
+  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -34,14 +33,16 @@ final Function()?onTap;
               ),
               Text(
                 "Add Items",
-                style: interFontBlack(color: Colors.blue, fontsize: 12.sp),
+                style: interFontBlack(
+                    color: Colors.blue, fontsize: 12.sp, context),
               ),
               SizedBox(
                 width: 4.w,
               ),
               Text(
                 "(Optional)",
-                style: interFontBlack(color: Colorconst.cGrey, fontsize: 12.sp),
+                style: interFontBlack(
+                    color: Colorconst.cGrey, fontsize: 12.sp, context),
               ),
             ],
           ),

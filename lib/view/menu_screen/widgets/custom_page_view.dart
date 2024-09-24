@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 class CustomPageView extends StatefulWidget {
@@ -38,9 +40,8 @@ class _CustomPageViewState extends State<CustomPageView> {
                       borderRadius: BorderRadius.circular(10.0),
                       gradient: const LinearGradient(
                         colors: [
-                          Color(0xFFD97291), // light pink at the left
-                          Color.fromARGB(
-                              255, 141, 38, 76), // dark pink at the right
+                          Color(0xFFD97291),
+                          Color.fromARGB(255, 141, 38, 76),
                         ],
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
@@ -66,18 +67,16 @@ class _CustomPageViewState extends State<CustomPageView> {
                               ),
                               Container(
                                 padding: const EdgeInsets.symmetric(
-                                    horizontal: 20.0,
-                                    vertical: 4.0), // decreased padding
+                                    horizontal: 20.0, vertical: 4.0),
                                 decoration: ShapeDecoration(
-                                  color: Colors.green[100], // background color
-                                  shape:
-                                      const StadiumBorder(), // Stadium border for shape
+                                  color: Colors.green[100],
+                                  shape: const StadiumBorder(),
                                 ),
                                 child: const Text(
-                                  'HURRY UP!', // heading with "Hurry up" in green
+                                  'HURRY UP!',
                                   style: TextStyle(
                                     color: Colors.green,
-                                    fontSize: 14, // decreased font size
+                                    fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -97,9 +96,7 @@ class _CustomPageViewState extends State<CustomPageView> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               ElevatedButton(
-                                onPressed: () {
-                                  // Add your button action here
-                                },
+                                onPressed: () {},
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.white,
                                   shape: RoundedRectangleBorder(
@@ -109,8 +106,7 @@ class _CustomPageViewState extends State<CustomPageView> {
                                 child: const Text(
                                   'Buy Now',
                                   style: TextStyle(
-                                    color: Color(
-                                        0xFF0033A0), // Replace with your color
+                                    color: Color(0xFF0033A0),
                                   ),
                                 ),
                               ),
@@ -129,7 +125,7 @@ class _CustomPageViewState extends State<CustomPageView> {
                       borderRadius: BorderRadius.circular(10.0),
                       gradient: const LinearGradient(
                         colors: [
-                          Color.fromRGBO(33, 30, 46, 1), // dark grey shades
+                          Color.fromRGBO(33, 30, 46, 1),
                           Color.fromRGBO(35, 28, 49, 1),
                         ],
                         begin: Alignment.centerLeft,
@@ -147,13 +143,12 @@ class _CustomPageViewState extends State<CustomPageView> {
                               Container(
                                 padding: const EdgeInsets.all(5.0),
                                 decoration: BoxDecoration(
-                                    color: Colors
-                                        .orange, // orange background for icon
+                                    color: Colors.orange,
                                     borderRadius: BorderRadius.circular(5)),
                                 child: const Row(
                                   children: [
                                     Icon(
-                                      Icons.cake_sharp, // crown-like icon
+                                      Icons.cake_sharp,
                                       color: Colors.white,
                                     ),
                                     Text(
@@ -186,19 +181,17 @@ class _CustomPageViewState extends State<CustomPageView> {
           ),
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center, // Center the dots
+          mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(2, (index) {
             return Container(
-              margin: const EdgeInsets.symmetric(
-                  horizontal: 8), // Space between dots
-              width: 20, // Width of the stadium shape
-              height: 4, // Height of the stadium shape
+              margin: const EdgeInsets.symmetric(horizontal: 8),
+              width: 20,
+              height: 4,
               decoration: BoxDecoration(
                 color: _currentPage == index
-                    ? const Color(0xFF0033A0) // Active dot color
-                    : Colors.grey[400], // Inactive dot color
-                borderRadius: BorderRadius.circular(
-                    12), // Makes the shape more like a stadium
+                    ? const Color(0xFF0033A0)
+                    : Colors.grey[400],
+                borderRadius: BorderRadius.circular(12),
               ),
             );
           }),

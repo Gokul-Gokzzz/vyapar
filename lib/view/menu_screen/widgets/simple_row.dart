@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 
 class SimpleRow extends StatelessWidget {
@@ -16,9 +18,9 @@ class SimpleRow extends StatelessWidget {
     return ListTile(
       leading: Icon(icon),
       title: Text(text),
-      trailing: Icon(
+      trailing: const Icon(
         Icons.arrow_circle_right_outlined,
-        color: Colors.grey, // Adjust color as needed
+        color: Colors.grey,
       ),
       onTap: onTap,
     );
