@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:vyapar/view/menu_screen/sales/sales_return/credit_note.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/sales_return/credit_note.dart';
 
 class SaleReturnScreen extends StatefulWidget {
   @override

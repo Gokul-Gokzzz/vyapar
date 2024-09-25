@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vyapar/utils/colors.dart';
 import 'package:vyapar/utils/text_style.dart';
-import 'package:vyapar/view/menu_screen/sales/widget/verticle_divider.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/widget/verticle_divider.dart';
 
 class DateInvoiceWidget extends StatelessWidget {
   DateInvoiceWidget({super.key, this.invoiceNumber, this.date});

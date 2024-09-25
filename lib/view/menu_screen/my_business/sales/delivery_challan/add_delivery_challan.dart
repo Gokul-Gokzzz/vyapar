@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 import 'package:vyapar/utils/colors.dart';
 import 'package:vyapar/utils/text_style.dart';
-import 'package:vyapar/view/menu_screen/sales/add_item/add_item.dart';
-import 'package:vyapar/view/menu_screen/sales/add_item/widget/bottom_button.dart';
-import 'package:vyapar/view/menu_screen/sales/add_sale/widget/widget.dart';
-import 'package:vyapar/view/menu_screen/sales/estimate_details/add_estimate.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/add_item/add_item.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/add_item/widget/bottom_button.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/add_sale/widget/widget.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/delivery_challan/add_item_deliery.dart';
 import 'package:vyapar/view/menu_screen/widgets/widget.dart';
 
-class EstimateQuotationScreen extends StatelessWidget {
+class AddDeliveryChallanScreen extends StatelessWidget {
   final ValueNotifier<double> totalAmountNotifier = ValueNotifier(0.0);
   final ValueNotifier<double> receivedAmountNotifier = ValueNotifier(0.0);
   final ValueNotifier<bool> isReceivedChecked = ValueNotifier(false);
@@ -24,7 +24,7 @@ class EstimateQuotationScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
-        title: Text("Estimate/Quotation"),
+        title: Text("Delivery Challan"),
         actions: [
           SizedBox(width: screenWidth * 0.02),
           IconButton(onPressed: () {}, icon: Icon(Icons.settings_outlined)),
@@ -55,11 +55,11 @@ class EstimateQuotationScreen extends StatelessWidget {
                                 labelText: "Customer *",
                                 hintText: "Enter Customer",
                               ),
-                              // SizedBox(height: screenHeight * 0.03),
-                              // CustomTextFormField(
-                              //   labelText: "Phone Number",
-                              //   hintText: "Enter Phone Number",
-                              // ),
+                              SizedBox(height: screenHeight * 0.03),
+                              CustomTextFormField(
+                                labelText: "Due Date",
+                                hintText: "24/09/2024",
+                              ),
                               SizedBox(height: screenHeight * 0.03),
                               AddItemButton(
                                 onTap: () {
@@ -67,7 +67,7 @@ class EstimateQuotationScreen extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              AddEstimateItemScreen()));
+                                              AddItemDeliery()));
                                 },
                               ),
                             ],
@@ -76,7 +76,7 @@ class EstimateQuotationScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  // SizedBox(height: screenHeight * 0.005),
+                  SizedBox(height: screenHeight * 0.005),
                   Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: screenWidth * 0.04,
@@ -109,7 +109,6 @@ class EstimateQuotationScreen extends StatelessWidget {
                                 keyboardType: TextInputType.number,
                                 decoration: InputDecoration(
                                   hintText: "₹",
-                                  hintStyle: TextStyle(color: Colors.black),
                                   border: InputBorder.none,
                                   contentPadding: EdgeInsets.only(
                                     left: screenWidth * 0.025,
@@ -137,15 +136,7 @@ class EstimateQuotationScreen extends StatelessWidget {
                       return Column(
                         children: [
                           if (totalAmount > 0) ...[
-                            Padding(
-                              padding:
-                                  EdgeInsets.only(left: screenWidth * .036),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [],
-                              ),
-                            ),
+                            SizedBox(height: screenHeight * .01),
                             Container(
                               padding: EdgeInsets.all(10),
                               height: screenHeight * .25,
@@ -160,7 +151,7 @@ class EstimateQuotationScreen extends StatelessWidget {
                                             TextStyle(color: Colorconst.cGrey),
                                       ),
                                       SizedBox(
-                                        width: screenWidth * .3,
+                                        width: screenWidth * .4,
                                       ),
                                       Text("Select State"),
                                       Icon(Icons.arrow_drop_down)
@@ -169,7 +160,7 @@ class EstimateQuotationScreen extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            SizedBox(height: screenHeight * .01),
+                            // SizedBox(height: screenHeight * .01),
                             Row(
                               children: [
                                 Container(

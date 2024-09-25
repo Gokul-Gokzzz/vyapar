@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:vyapar/view/menu_screen/sales/estimate_details/estimate_quotation.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/delivery_challan/add_delivery_challan.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/estimate_details/estimate_quotation.dart';
 
-class EstimateDetailsScreen extends StatelessWidget {
+class DeliveryChallanDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +14,7 @@ class EstimateDetailsScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: Text('Estimate Details'),
+        title: Text('Delivery Challan Details Details'),
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
@@ -50,7 +51,7 @@ class EstimateDetailsScreen extends StatelessWidget {
                 ),
                 ChoiceChip(
                   label: Text(
-                    'Open Estimate',
+                    'Open Challan',
                     style: TextStyle(color: Colors.black, fontSize: 12),
                   ),
                   selected: false,
@@ -62,7 +63,7 @@ class EstimateDetailsScreen extends StatelessWidget {
                 ),
                 ChoiceChip(
                   label: Text(
-                    'Closed Estimate',
+                    'Closed Challan',
                     style: TextStyle(color: Colors.black, fontSize: 12),
                   ),
                   selected: false,
@@ -76,17 +77,18 @@ class EstimateDetailsScreen extends StatelessWidget {
             ),
           ),
           Spacer(),
-
+          // Lottie animation
           Container(
             width: 150,
             height: 150,
-            child: Lottie.asset('assets/Animation - 1727163424135.json'),
+            child: Lottie.asset(
+                'assets/Animation - 1727163424135.json'), // Replace with your asset
           ),
           SizedBox(height: 20),
           Text(
-            'Hey! You have no estimate/quotations yet.\nPlease add your estimate/quotations here',
+            'Hey! You have no delivert challan yet.Please add\n your delivery challans here',
             textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.black54, fontSize: 16),
+            style: TextStyle(color: Colors.black54, fontSize: 15),
           ),
           Spacer(),
         ],
@@ -96,11 +98,11 @@ class EstimateDetailsScreen extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => EstimateQuotationScreen(),
+              builder: (context) => AddDeliveryChallanScreen(),
             ),
           );
         },
-        label: Text('Add Estimate'),
+        label: Text('Add Delivery Challan'),
         icon: Icon(Icons.add),
         backgroundColor: Colors.red,
       ),

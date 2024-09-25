@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:vyapar/utils/colors.dart';
-import 'package:vyapar/view/menu_screen/sales/add_sale/add_sales.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/add_sale/add_sales.dart';
 
 class SaleListScreen extends StatelessWidget {
   @override

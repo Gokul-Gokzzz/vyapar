@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:vyapar/view/menu_screen/sales/estimate_details/estimate_quotation.dart';
-import 'package:vyapar/view/menu_screen/sales/sales_order/add_sales_order.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/estimate_details/estimate_quotation.dart';
 
-class SaleOrderScreen extends StatelessWidget {
+class EstimateDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +13,7 @@ class SaleOrderScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: Text('Orders'),
+        title: Text('Estimate Details'),
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
@@ -51,7 +50,7 @@ class SaleOrderScreen extends StatelessWidget {
                 ),
                 ChoiceChip(
                   label: Text(
-                    'Open Orders',
+                    'Open Estimate',
                     style: TextStyle(color: Colors.black, fontSize: 12),
                   ),
                   selected: false,
@@ -63,7 +62,7 @@ class SaleOrderScreen extends StatelessWidget {
                 ),
                 ChoiceChip(
                   label: Text(
-                    'Closed Orders',
+                    'Closed Estimate',
                     style: TextStyle(color: Colors.black, fontSize: 12),
                   ),
                   selected: false,
@@ -97,11 +96,11 @@ class SaleOrderScreen extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => AddSaleOrdercreen(),
+              builder: (context) => EstimateQuotationScreen(),
             ),
           );
         },
-        label: Text('Add Sale Order'),
+        label: Text('Add Estimate'),
         icon: Icon(Icons.add),
         backgroundColor: Colors.red,
       ),

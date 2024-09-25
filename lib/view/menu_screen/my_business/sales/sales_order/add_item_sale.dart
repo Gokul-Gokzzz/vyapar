@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:vyapar/utils/colors.dart';
 import 'package:vyapar/utils/text_style.dart';
-import 'package:vyapar/view/menu_screen/sales/add_sale/widget/widget.dart';
-import 'package:vyapar/view/menu_screen/sales/delivery_challan/add_delivery_challan.dart';
-import 'package:vyapar/view/menu_screen/sales/widget/custom_dropdown.dart';
-import 'package:vyapar/view/menu_screen/sales/widget/verticle_divider.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/add_sale/widget/widget.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/delivery_challan/add_delivery_challan.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/widget/custom_dropdown.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/widget/verticle_divider.dart';
 
-class AddItemDeliery extends StatefulWidget {
-  const AddItemDeliery({super.key});
+class AddItemSale extends StatefulWidget {
+  const AddItemSale({super.key});
 
   @override
-  State<AddItemDeliery> createState() => _AddItemDelieryState();
+  State<AddItemSale> createState() => _AddItemSaleState();
 }
 
-class _AddItemDelieryState extends State<AddItemDeliery> {
+class _AddItemSaleState extends State<AddItemSale> {
   final GlobalKey<FormState> addItemKey = GlobalKey<FormState>();
   List<int> units = List.generate(5, (index) => index + 1);
 
@@ -95,7 +95,7 @@ class _AddItemDelieryState extends State<AddItemDeliery> {
             },
             icon: Icon(Icons.arrow_back)),
         title: Text(
-          "Add Items to Delivery Challan",
+          "Add Items To Credit Note",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         actions: [

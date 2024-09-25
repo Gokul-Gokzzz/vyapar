@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:vyapar/view/menu_screen/sales/delivery_challan/add_delivery_challan.dart';
-import 'package:vyapar/view/menu_screen/sales/estimate_details/estimate_quotation.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/estimate_details/estimate_quotation.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/sales_order/add_sales_order.dart';
 
-class DeliveryChallanDetails extends StatelessWidget {
+class SaleOrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +14,7 @@ class DeliveryChallanDetails extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: Text('Delivery Challan Details Details'),
+        title: Text('Orders'),
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
@@ -51,7 +51,7 @@ class DeliveryChallanDetails extends StatelessWidget {
                 ),
                 ChoiceChip(
                   label: Text(
-                    'Open Challan',
+                    'Open Orders',
                     style: TextStyle(color: Colors.black, fontSize: 12),
                   ),
                   selected: false,
@@ -63,7 +63,7 @@ class DeliveryChallanDetails extends StatelessWidget {
                 ),
                 ChoiceChip(
                   label: Text(
-                    'Closed Challan',
+                    'Closed Orders',
                     style: TextStyle(color: Colors.black, fontSize: 12),
                   ),
                   selected: false,
@@ -77,18 +77,17 @@ class DeliveryChallanDetails extends StatelessWidget {
             ),
           ),
           Spacer(),
-          // Lottie animation
+
           Container(
             width: 150,
             height: 150,
-            child: Lottie.asset(
-                'assets/Animation - 1727163424135.json'), // Replace with your asset
+            child: Lottie.asset('assets/Animation - 1727163424135.json'),
           ),
           SizedBox(height: 20),
           Text(
-            'Hey! You have no delivert challan yet.Please add\n your delivery challans here',
+            'Hey! You have no estimate/quotations yet.\nPlease add your estimate/quotations here',
             textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.black54, fontSize: 15),
+            style: TextStyle(color: Colors.black54, fontSize: 16),
           ),
           Spacer(),
         ],
@@ -98,11 +97,11 @@ class DeliveryChallanDetails extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => AddDeliveryChallanScreen(),
+              builder: (context) => AddSaleOrdercreen(),
             ),
           );
         },
-        label: Text('Add Delivery Challan'),
+        label: Text('Add Sale Order'),
         icon: Icon(Icons.add),
         backgroundColor: Colors.red,
       ),

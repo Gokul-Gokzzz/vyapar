@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 import 'package:vyapar/utils/colors.dart';
 import 'package:vyapar/utils/text_style.dart';
-import 'package:vyapar/view/menu_screen/sales/add_item/add_item.dart';
-import 'package:vyapar/view/menu_screen/sales/add_item/widget/bottom_button.dart';
-import 'package:vyapar/view/menu_screen/sales/add_sale/widget/widget.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/add_item/add_item.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/add_item/widget/bottom_button.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/add_sale/widget/widget.dart';
 import 'package:vyapar/view/menu_screen/widgets/widget.dart';
 
 class AddSaleInvoiceScreen extends StatelessWidget {

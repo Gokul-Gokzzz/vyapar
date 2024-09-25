@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:vyapar/view/menu_screen/sales/delivery_challan/delivery_challan.dart';
-import 'package:vyapar/view/menu_screen/sales/estimate_details/estimate_details.dart';
-import 'package:vyapar/view/menu_screen/sales/sales_return/sales_return.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/report.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/delivery_challan/delivery_challan.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/estimate_details/estimate_details.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/sales_return/sales_return.dart';
 import 'package:vyapar/view/menu_screen/widgets/custom_page_view.dart';
 
 class MenuScreen extends StatefulWidget {
@@ -138,6 +139,40 @@ class _MenuScreenState extends State<MenuScreen> {
         'icon': Icons.add_shopping_cart,
         'label': 'Sale Order',
         'onTap': () {/*  onTap  */}
+      },
+    ]);
+  }
+
+  void _showOnlineShopPopup(BuildContext context) {
+    _showCustomPopup(context, [
+      {
+        'icon': Icons.dashboard,
+        'label': 'DashBoard',
+        'onTap': () {/* Your onTap  */}
+      },
+      {
+        'icon': Icons.production_quantity_limits_sharp,
+        'label': 'Manage Item',
+        'onTap': () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SaleReturnScreen(),
+            ),
+          );
+        }
+      },
+      {
+        'icon': Icons.sell,
+        'label': 'Manage Orders',
+        'onTap': () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DeliveryChallanDetails(),
+            ),
+          );
+        }
       },
     ]);
   }
@@ -485,9 +520,17 @@ class _MenuScreenState extends State<MenuScreen> {
                         _showPurchasePopup(context);
                       }),
                       buildGridItem(Icons.note_alt_outlined, 'Expenses', () {}),
-                      buildGridItem(
-                          Icons.home_outlined, 'My Online Store', () {}),
-                      buildGridItem(Icons.note_outlined, 'Report', () {}),
+                      buildGridItem(Icons.home_outlined, 'My Online Store', () {
+                        _showOnlineShopPopup(context);
+                      }),
+                      buildGridItem(Icons.note_outlined, 'Report', () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ReportScreen(),
+                          ),
+                        );
+                      }),
                     ],
                   ),
                 ],

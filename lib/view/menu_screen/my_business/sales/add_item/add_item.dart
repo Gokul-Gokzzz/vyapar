@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:vyapar/utils/colors.dart';
 import 'package:vyapar/utils/text_style.dart';
-import 'package:vyapar/view/menu_screen/sales/add_sale/widget/widget.dart';
-import 'package:vyapar/view/menu_screen/sales/delivery_challan/add_delivery_challan.dart';
-import 'package:vyapar/view/menu_screen/sales/widget/custom_dropdown.dart';
-import 'package:vyapar/view/menu_screen/sales/widget/verticle_divider.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/add_sale/widget/widget.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/widget/custom_dropdown.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/widget/verticle_divider.dart';
 
-class AddItemSale extends StatefulWidget {
-  const AddItemSale({super.key});
+class AddItemSaleScreen extends StatefulWidget {
+  const AddItemSaleScreen({super.key});
 
   @override
-  State<AddItemSale> createState() => _AddItemSaleState();
+  State<AddItemSaleScreen> createState() => _AddItemSaleScreenState();
 }
 
-class _AddItemSaleState extends State<AddItemSale> {
+class _AddItemSaleScreenState extends State<AddItemSaleScreen> {
   final GlobalKey<FormState> addItemKey = GlobalKey<FormState>();
   List<int> units = List.generate(5, (index) => index + 1);
 
@@ -95,7 +94,7 @@ class _AddItemSaleState extends State<AddItemSale> {
             },
             icon: Icon(Icons.arrow_back)),
         title: Text(
-          "Add Items To Credit Note",
+          "Add Items To Sale Order",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         actions: [
@@ -597,5 +596,26 @@ class _AddItemSaleState extends State<AddItemSale> {
         ],
       ),
     );
+  }
+}
+
+class DottedLinePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint()
+      ..color = Colors.black
+      ..strokeWidth = 1
+      ..style = PaintingStyle.stroke;
+
+    double dashWidth = 5, dashSpace = 3, startX = 0;
+    while (startX < size.width) {
+      canvas.drawLine(Offset(startX, 0), Offset(startX + dashWidth, 0), paint);
+      startX += dashWidth + dashSpace;
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
   }
 }

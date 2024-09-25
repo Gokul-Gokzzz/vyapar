@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:vyapar/utils/colors.dart';
 import 'package:vyapar/utils/text_style.dart';
-import 'package:vyapar/view/menu_screen/sales/add_sale/widget/widget.dart';
-import 'package:vyapar/view/menu_screen/sales/delivery_challan/add_delivery_challan.dart';
-import 'package:vyapar/view/menu_screen/sales/widget/custom_dropdown.dart';
-import 'package:vyapar/view/menu_screen/sales/widget/verticle_divider.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/add_sale/widget/widget.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/delivery_challan/add_delivery_challan.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/widget/custom_dropdown.dart';
+import 'package:vyapar/view/menu_screen/my_business/sales/widget/verticle_divider.dart';
 
 class AddEstimateItemScreen extends StatefulWidget {
   const AddEstimateItemScreen({super.key});
