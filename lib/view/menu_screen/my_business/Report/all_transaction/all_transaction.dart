@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class SaleReport extends StatelessWidget {
+class AllTransaction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Sale Report', style: TextStyle(fontSize: 16)),
+        title: Text('All Transactions', style: TextStyle(fontSize: 16)),
         actions: [
           IconButton(
             icon: Icon(Icons.picture_as_pdf, size: 20),
@@ -30,7 +30,7 @@ class SaleReport extends StatelessWidget {
                   children: [
                     Text(
                       "This Month",
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(color: Colors.black, fontSize: 12),
                     ),
                     IconButton(
                       onPressed: () {},
@@ -52,57 +52,61 @@ class SaleReport extends StatelessWidget {
                 ),
               ),
               Divider(),
-              SizedBox(height: 12),
 
               // Filters Applied Section
               Row(
+                children: [
+                  Text(
+                    'All Transactions',
+                    style: TextStyle(fontSize: 12, color: Colors.black),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.arrow_drop_down, color: Colors.black),
+                  ),
+                  // OutlinedButton.icon(
+                  //   icon: Icon(Icons.filter_alt, size: 16),
+                  //   label: Text('Filters',
+                  //       style: TextStyle(fontSize: 12, color: Colors.black)),
+                  //   onPressed: () {},
+                  //   style: OutlinedButton.styleFrom(padding: EdgeInsets.all(8)),
+                  // ),
+                ],
+              ),
+              Divider(),
+
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Filters Applied:',
-                      style: TextStyle(fontSize: 12, color: Colors.black)),
-                  OutlinedButton.icon(
-                    icon: Icon(Icons.filter_alt, size: 16),
-                    label: Text('Filters',
-                        style: TextStyle(fontSize: 12, color: Colors.black)),
+                  Text(
+                    'Party Name All Parties',
+                    style: TextStyle(fontSize: 12, color: Colors.black),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  IconButton(
                     onPressed: () {},
-                    style: OutlinedButton.styleFrom(padding: EdgeInsets.all(8)),
+                    icon: Icon(Icons.arrow_drop_down, color: Colors.black),
                   ),
+                  // OutlinedButton.icon(
+                  //   icon: Icon(Icons.filter_alt, size: 16),
+                  //   label: Text('Filters',
+                  //       style: TextStyle(fontSize: 12, color: Colors.black)),
+                  //   onPressed: () {},
+                  //   style: OutlinedButton.styleFrom(padding: EdgeInsets.all(8)),
+                  // ),
                 ],
               ),
-              SizedBox(height: 4),
-
-              // Filter Chips
-              Wrap(
-                spacing: 8.0,
-                children: [
-                  FilterChip(
-                    label: Text('Txns Type - Sale & Cr. Note',
-                        style: TextStyle(fontSize: 12, color: Colors.black)),
-                    onSelected: (_) {},
-                  ),
-                  FilterChip(
-                    label: Text('Party - All Party',
-                        style: TextStyle(fontSize: 12)),
-                    onSelected: (_) {},
-                  ),
-                ],
-              ),
-              SizedBox(height: 12),
-
+              Divider(),
               // Statistic Cards
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _buildStatCard('No of Txns', '3'),
-                  _buildStatCard('Total Sale', '₹ 10.00'),
-                  _buildStatCard('Balance Due', '₹ 0.00', isPositive: true),
-                ],
-              ),
-              SizedBox(height: 12),
 
               // Transaction Cards
               _buildTransactionCard('Gokul', 'Amount', '₹ 10.00', 'Balance',
-                  '₹ 0.00', 'SALE 1', '12 SEP, 24'),
+                  '₹ 0.00', 'SALE: 1', '12 SEP, 24'),
               _buildTransactionCard('Gokul', 'Amount', '₹ 10,000.00', 'Balance',
                   '₹ 10,000.00', 'SALE 2', '19 SEP, 24'),
               _buildTransactionCard('Gokul', 'Amount', '₹ 10,000.00', 'Balance',
@@ -164,6 +168,7 @@ class SaleReport extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            // Left Column with Name and Date
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -172,44 +177,40 @@ class SaleReport extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         fontSize: 12,
                         color: Colors.black)),
-                SizedBox(height: 15),
-                Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('$label1: ',
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black)),
-                        Text(value1,
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black)),
-                      ],
-                    ),
-                    SizedBox(width: 20),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('$label2: ',
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black)),
-                        Text(value2,
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black)),
-                      ],
-                    ),
-                  ],
-                ),
+                SizedBox(height: 5),
+                Text(date, style: TextStyle(fontSize: 12, color: Colors.black)),
               ],
             ),
-            Spacer(),
+
+            Spacer(), // Add space between left and center
+
+            // Centered Column for Transaction Type
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(txnType,
+                    style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black)),
+              ],
+            ),
+
+            Spacer(), // Add space between center and right
+
+            // Right Column with Label1, Value1, Label2, Value2
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(txnType,
-                    style: TextStyle(fontSize: 12, color: Colors.black)),
-                Text(date, style: TextStyle(fontSize: 12, color: Colors.black)),
-                SizedBox(height: 10),
+                Text('$label1: ',
+                    style: TextStyle(fontSize: 15, color: Colors.black)),
+                Text(value1,
+                    style: TextStyle(fontSize: 15, color: Colors.black)),
+                SizedBox(height: 5),
+                Text('$label2: ',
+                    style: TextStyle(fontSize: 15, color: Colors.black)),
+                Text(value2,
+                    style: TextStyle(fontSize: 15, color: Colors.black)),
               ],
             ),
           ],

@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/all_transaction/all_transaction.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/cash_flow_report/cash_flow.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/day_book/day_book.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/profit_loss_report/profit_loss_reoprt.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/purchase_report/purchase_report.dart';
 import 'package:vyapar/view/menu_screen/my_business/Report/sales_report/sales_report.dart';
 
 class ReportScreen extends StatelessWidget {
@@ -50,13 +55,48 @@ class ReportScreen extends StatelessWidget {
               ),
             );
           }),
-          buildSubItem('Purchase Report', context, () {}),
-          buildSubItem('Day Book', context, () {}),
-          buildSubItem('All Transactions', context, () {}),
+          buildSubItem('Purchase Report', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => PurchaseReport(),
+              ),
+            );
+          }),
+          buildSubItem('Day Book', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DayBook(),
+              ),
+            );
+          }),
+          buildSubItem('All Transactions', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AllTransaction(),
+              ),
+            );
+          }),
           buildSubItemWithIcon(
               'Bill Wise Profit', context, Icons.info_outline, () {}),
-          buildSubItem('Profit & Loss', context, () {}),
-          buildSubItem('Cashflow', context, () {}),
+          buildSubItem('Profit & Loss', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ProfitAndLossReoprt(),
+              ),
+            );
+          }),
+          buildSubItem('Cashflow', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CashFlowReportReport(),
+              ),
+            );
+          }),
           buildSubItemWithIcon(
               'Balance Sheet', context, Icons.info_outline, () {}),
 
