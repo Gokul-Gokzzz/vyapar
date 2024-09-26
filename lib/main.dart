@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vyapar/controller/home_controller/home_controller.dart';
 import 'package:vyapar/view/home/home.dart';
+import 'package:vyapar/view/menu_screen/cash_&_bank/bank_account/add_bank_account.dart';
+import 'package:vyapar/view/menu_screen/cash_&_bank/bank_account/bank_account.dart';
 import 'package:vyapar/view/menu_screen/menu_screen.dart';
 import 'package:vyapar/view/menu_screen/my_business/Report/report.dart';
 import 'package:vyapar/view/menu_screen/my_business/sales/add_sale/add_sales.dart';
@@ -30,17 +32,19 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, child) {
         return GetMaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
-              textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
-            ),
-            home:
-                // HomeScreen()
-                ReportScreen()
-            //  SaleOrderScreen()
-            // MenuScreen()
-            );
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+          ),
+          home:
+              // HomeScreen()
+              // ReportScreen()
+              //  SaleOrderScreen(),
+              AddBankAccount(),
+          // BankAccountsPage(),
+          // MenuScreen(),
+        );
       },
     );
   }

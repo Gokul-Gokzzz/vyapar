@@ -1,0 +1,158 @@
+import 'package:flutter/material.dart';
+import 'package:vyapar/view/menu_screen/cash_&_bank/bank_account/add_bank_account.dart';
+
+class BankAccountsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Bank Accounts',
+            style: TextStyle(color: Colors.white),
+          ),
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              // Handle back button
+            },
+          ),
+          backgroundColor: const Color.fromARGB(255, 142, 33, 243),
+        ),
+        body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Stack(
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height / 1.6,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height / 2.87,
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 142, 33, 243),
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(70),
+                      ),
+                    ),
+                    child: Center(
+                      child: Image.asset(
+                        'assets/bank_and_cah.png',
+                        height: 200,
+                        width: 230,
+                        scale: 0.8,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 1.78,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 142, 33, 243),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 1.77,
+                  padding: EdgeInsets.only(top: 40, bottom: 30),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(70),
+                      )),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey.shade200),
+                          ),
+                          child: ListTile(
+                            leading: Icon(
+                              Icons.business_sharp,
+                              color: Colors.yellow,
+                            ),
+                            title: Text(
+                              'Add Your bank &record all your bank\ntransaction',
+                              style: TextStyle(color: Colors.grey.shade400),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey.shade200),
+                          ),
+                          child: ListTile(
+                            leading: Icon(
+                              Icons.qr_code,
+                              color: Colors.green,
+                            ),
+                            title: Text(
+                              'Get payment into your bank account\nvia QR code.',
+                              style: TextStyle(color: Colors.grey.shade400),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton.icon(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AddBankAccount(),
+                                ),
+                              );
+                            },
+                            label: Text(
+                              'Add Bank',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            icon: Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ),
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.red,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20))),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+        ));
+  }
+}

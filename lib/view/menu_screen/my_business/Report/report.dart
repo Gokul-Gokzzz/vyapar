@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:vyapar/view/menu_screen/my_business/Report/all_transaction/all_transaction.dart';
-import 'package:vyapar/view/menu_screen/my_business/Report/cash_flow_report/cash_flow.dart';
-import 'package:vyapar/view/menu_screen/my_business/Report/day_book/day_book.dart';
-import 'package:vyapar/view/menu_screen/my_business/Report/profit_loss_report/profit_loss_reoprt.dart';
-import 'package:vyapar/view/menu_screen/my_business/Report/purchase_report/purchase_report.dart';
-import 'package:vyapar/view/menu_screen/my_business/Report/sales_report/sales_report.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/Transaction/all_transaction/all_transaction.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/Transaction/cash_flow_report/cash_flow.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/Transaction/day_book/day_book.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/Transaction/profit_loss_report/profit_loss_reoprt.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/Transaction/purchase_report/purchase_report.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/Transaction/sales_report/sales_report.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/business_status/bank_statement/bank_statement.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/business_status/discount_report/discount_report.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/expense_report/expense_Category_report/expense_category_report.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/expense_report/expense_item_report/expense_item_report.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/expense_report/expense_transaction_report/expense_transaction.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/loan_report/loan_statement/loan_statement.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/sale_purchase_order/sale_purchase_Transaction/sale_purchasetransaction.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/sale_purchase_order/sale_purchase_order/sale_purchase_order.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/taxes/form_no_27eq/form_no_27eq.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/taxes/gst_rate_report/gst_rate_report.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/taxes/gst_reports/gst_reports.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/taxes/tcs_receivable/tcs_receivable.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/taxes/tds_payable/tds_payable.dart';
+import 'package:vyapar/view/menu_screen/my_business/Report/taxes/tds_receivable/tds_receivable.dart';
 
 class ReportScreen extends StatelessWidget {
   const ReportScreen({super.key});
@@ -181,8 +195,22 @@ class ReportScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          buildSubItem('Bank Statement', context, () {}),
-          buildSubItem('Discount Report', context, () {}),
+          buildSubItem('Bank Statement', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => BankStatement(),
+              ),
+            );
+          }),
+          buildSubItem('Discount Report', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DiscountReport(),
+              ),
+            );
+          }),
 
           const SizedBox(height: 30),
 
@@ -197,13 +225,55 @@ class ReportScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          buildSubItem('GST Report', context, () {}),
-          buildSubItem('GST Rate Report', context, () {}),
-          buildSubItem('Form No. 27EQ', context, () {}),
-          buildSubItem('TCS Receivable', context, () {}),
+          buildSubItem('GST Report', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => GstReportPage(),
+              ),
+            );
+          }),
+          buildSubItem('GST Rate Report', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => GstRateReport(),
+              ),
+            );
+          }),
+          buildSubItem('Form No. 27EQ', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => FormNo27EQScreen(),
+              ),
+            );
+          }),
+          buildSubItem('TCS Receivable', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TcsReceivable(),
+              ),
+            );
+          }),
 
-          buildSubItem('TDS Payable', context, () {}),
-          buildSubItem('TDS Receivable', context, () {}),
+          buildSubItem('TDS Payable', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TdsPayable(),
+              ),
+            );
+          }),
+          buildSubItem('TDS Receivable', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TdsReceivable(),
+              ),
+            );
+          }),
 
           const SizedBox(height: 30),
 
@@ -218,9 +288,30 @@ class ReportScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          buildSubItem('Expense Transaction Report', context, () {}),
-          buildSubItem('Expense Category Report', context, () {}),
-          buildSubItem('Expense Item Report', context, () {}),
+          buildSubItem('Expense Transaction Report', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ExpenseTransaction(),
+              ),
+            );
+          }),
+          buildSubItem('Expense Category Report', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ExpenseCategoryReport(),
+              ),
+            );
+          }),
+          buildSubItem('Expense Item Report', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ExpenseItemReport(),
+              ),
+            );
+          }),
 
           const SizedBox(height: 30),
 
@@ -235,9 +326,22 @@ class ReportScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          buildSubItem(
-              'Sale/Purchase Order Transaction Report', context, () {}),
-          buildSubItem('Sale/Purchase Order Item Report', context, () {}),
+          buildSubItem('Sale/Purchase Order Transaction Report', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SalePurchaseOrderTransactionReport(),
+              ),
+            );
+          }),
+          buildSubItem('Sale/Purchase Order Item Report', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SalePurchaseOrderItemReport(),
+              ),
+            );
+          }),
 
           const SizedBox(height: 30),
 
@@ -252,7 +356,14 @@ class ReportScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          buildSubItem('Loan Statement', context, () {}),
+          buildSubItem('Loan Statement', context, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoanStatementScreen(),
+              ),
+            );
+          }),
 
           const SizedBox(height: 30),
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vyapar/view/menu_screen/cash_&_bank/bank_account/bank_account.dart';
 import 'package:vyapar/view/menu_screen/my_business/Report/report.dart';
 import 'package:vyapar/view/menu_screen/my_business/sales/delivery_challan/delivery_challan.dart';
 import 'package:vyapar/view/menu_screen/my_business/sales/estimate_details/estimate_details.dart';
@@ -623,8 +624,15 @@ class _MenuScreenState extends State<MenuScreen> {
                     crossAxisSpacing: 16,
                     // mainAxisSpacing: 16,
                     children: [
-                      buildGridItem(Icons.account_balance_outlined,
-                          'Bank Accounts', () {}),
+                      buildGridItem(
+                          Icons.account_balance_outlined, 'Bank Accounts', () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BankAccountsPage(),
+                          ),
+                        );
+                      }),
                       buildGridItem(Icons.account_balance_wallet_outlined,
                           'Cash In-Hand', () {}),
                       buildGridItem(

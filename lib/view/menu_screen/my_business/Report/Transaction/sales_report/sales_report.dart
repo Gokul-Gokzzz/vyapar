@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
 class SaleReport extends StatelessWidget {
+  const SaleReport({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Sale Report', style: TextStyle(fontSize: 16)),
+        title: const Text('Sale Report', style: TextStyle(fontSize: 16)),
         actions: [
           IconButton(
-            icon: Icon(Icons.picture_as_pdf, size: 20),
+            icon: const Icon(Icons.picture_as_pdf, size: 20),
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.grid_on, size: 20),
+            icon: const Icon(Icons.grid_on, size: 20),
             onPressed: () {},
           ),
         ],
@@ -28,17 +30,18 @@ class SaleReport extends StatelessWidget {
               IntrinsicHeight(
                 child: Row(
                   children: [
-                    Text(
+                    const Text(
                       "This Month",
                       style: TextStyle(color: Colors.black),
                     ),
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(Icons.arrow_drop_down, color: Colors.black),
+                      icon: const Icon(Icons.arrow_drop_down,
+                          color: Colors.black),
                     ),
-                    VerticalDivider(thickness: 2, color: Colors.grey),
-                    SizedBox(width: 15),
-                    Row(
+                    const VerticalDivider(thickness: 2, color: Colors.grey),
+                    const SizedBox(width: 15),
+                    const Row(
                       children: [
                         Icon(Icons.calendar_today, size: 16),
                         SizedBox(width: 4),
@@ -51,43 +54,44 @@ class SaleReport extends StatelessWidget {
                   ],
                 ),
               ),
-              Divider(),
-              SizedBox(height: 12),
+              const Divider(),
+              const SizedBox(height: 12),
 
               // Filters Applied Section
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Filters Applied:',
+                  const Text('Filters Applied:',
                       style: TextStyle(fontSize: 12, color: Colors.black)),
                   OutlinedButton.icon(
-                    icon: Icon(Icons.filter_alt, size: 16),
-                    label: Text('Filters',
+                    icon: const Icon(Icons.filter_alt, size: 16),
+                    label: const Text('Filters',
                         style: TextStyle(fontSize: 12, color: Colors.black)),
                     onPressed: () {},
-                    style: OutlinedButton.styleFrom(padding: EdgeInsets.all(8)),
+                    style: OutlinedButton.styleFrom(
+                        padding: const EdgeInsets.all(8)),
                   ),
                 ],
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
 
               // Filter Chips
               Wrap(
                 spacing: 8.0,
                 children: [
                   FilterChip(
-                    label: Text('Txns Type - Sale & Cr. Note',
+                    label: const Text('Txns Type - Sale & Cr. Note',
                         style: TextStyle(fontSize: 12, color: Colors.black)),
                     onSelected: (_) {},
                   ),
                   FilterChip(
-                    label: Text('Party - All Party',
+                    label: const Text('Party - All Party',
                         style: TextStyle(fontSize: 12)),
                     onSelected: (_) {},
                   ),
                 ],
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
 
               // Statistic Cards
               Row(
@@ -98,7 +102,7 @@ class SaleReport extends StatelessWidget {
                   _buildStatCard('Balance Due', '₹ 0.00', isPositive: true),
                 ],
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
 
               // Transaction Cards
               _buildTransactionCard('Gokul', 'Amount', '₹ 10.00', 'Balance',
@@ -131,14 +135,14 @@ class SaleReport extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 4),
+            const SizedBox(height: 4),
             Text(
               value,
               style: TextStyle(
@@ -168,48 +172,49 @@ class SaleReport extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(name,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 12,
                         color: Colors.black)),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Row(
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('$label1: ',
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black)),
+                            style: const TextStyle(
+                                fontSize: 12, color: Colors.black)),
                         Text(value1,
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black)),
+                            style: const TextStyle(
+                                fontSize: 12, color: Colors.black)),
                       ],
                     ),
-                    SizedBox(width: 20),
+                    const SizedBox(width: 20),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('$label2: ',
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black)),
+                            style: const TextStyle(
+                                fontSize: 12, color: Colors.black)),
                         Text(value2,
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black)),
+                            style: const TextStyle(
+                                fontSize: 12, color: Colors.black)),
                       ],
                     ),
                   ],
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(txnType,
-                    style: TextStyle(fontSize: 12, color: Colors.black)),
-                Text(date, style: TextStyle(fontSize: 12, color: Colors.black)),
-                SizedBox(height: 10),
+                    style: const TextStyle(fontSize: 12, color: Colors.black)),
+                Text(date,
+                    style: const TextStyle(fontSize: 12, color: Colors.black)),
+                const SizedBox(height: 10),
               ],
             ),
           ],
