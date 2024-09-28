@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:vyapar/view/menu_screen/cash_&_bank/bank_account/add_bank_account.dart';
 
 class BankAccountsPage extends StatelessWidget {
+  const BankAccountsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'Bank Accounts',
             style: TextStyle(color: Colors.white),
           ),
           leading: IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
               color: Colors.white,
             ),
@@ -21,7 +23,7 @@ class BankAccountsPage extends StatelessWidget {
           ),
           backgroundColor: const Color.fromARGB(255, 142, 33, 243),
         ),
-        body: Container(
+        body: SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Stack(
@@ -31,15 +33,15 @@ class BankAccountsPage extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height / 1.6,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                     ),
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height / 2.87,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 142, 33, 243),
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 142, 33, 243),
                       borderRadius: BorderRadius.only(
                         bottomRight: Radius.circular(70),
                       ),
@@ -59,9 +61,9 @@ class BankAccountsPage extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 1.78,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 142, 33, 243),
+                  height: MediaQuery.of(context).size.height / 1.67,
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 142, 33, 243),
                   ),
                 ),
               ),
@@ -69,9 +71,9 @@ class BankAccountsPage extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 1.77,
-                  padding: EdgeInsets.only(top: 40, bottom: 30),
-                  decoration: BoxDecoration(
+                  height: MediaQuery.of(context).size.height / 1.67,
+                  padding: const EdgeInsets.only(top: 40, bottom: 30),
+                  decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(70),
@@ -85,19 +87,44 @@ class BankAccountsPage extends StatelessWidget {
                             border: Border.all(color: Colors.grey.shade200),
                           ),
                           child: ListTile(
-                            leading: Icon(
+                            leading: const Icon(
                               Icons.business_sharp,
                               color: Colors.yellow,
                             ),
                             title: Text(
                               'Add Your bank &record all your bank\ntransaction',
-                              style: TextStyle(color: Colors.grey.shade400),
+                              style: TextStyle(
+                                  color: Colors.grey.shade400, fontSize: 12),
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 10,
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.grey.shade200,
+                            ),
+                          ),
+                          child: ListTile(
+                            leading: const Icon(
+                              Icons.qr_code,
+                              color: Colors.green,
+                            ),
+                            title: Text(
+                              'Get payment into your bank account\nvia QR code.',
+                              style: TextStyle(
+                                  color: Colors.grey.shade400, fontSize: 12),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 8,
                       ),
                       Padding(
                         padding: const EdgeInsets.all(20),
@@ -106,18 +133,23 @@ class BankAccountsPage extends StatelessWidget {
                             border: Border.all(color: Colors.grey.shade200),
                           ),
                           child: ListTile(
-                            leading: Icon(
-                              Icons.qr_code,
+                            leading: const Icon(
+                              Icons.video_collection_sharp,
                               color: Colors.green,
                             ),
                             title: Text(
-                              'Get payment into your bank account\nvia QR code.',
-                              style: TextStyle(color: Colors.grey.shade400),
+                              'How to add Bank Account',
+                              style: TextStyle(
+                                  color: Colors.grey.shade400, fontSize: 12),
+                            ),
+                            subtitle: Text(
+                              'Watch Video',
+                              style: TextStyle(color: Colors.red),
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Row(
@@ -132,11 +164,11 @@ class BankAccountsPage extends StatelessWidget {
                                 ),
                               );
                             },
-                            label: Text(
+                            label: const Text(
                               'Add Bank',
                               style: TextStyle(color: Colors.white),
                             ),
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.add,
                               color: Colors.white,
                             ),

@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vyapar/controller/home_controller/home_controller.dart';
+import 'package:vyapar/view/dashboard/dashboard_screen.dart';
 import 'package:vyapar/view/home/home.dart';
+import 'package:vyapar/view/item/item.dart';
+import 'package:vyapar/view/menu_screen/cash_&_bank/apply_loan/apply_loan.dart';
 import 'package:vyapar/view/menu_screen/cash_&_bank/bank_account/add_bank_account.dart';
 import 'package:vyapar/view/menu_screen/cash_&_bank/bank_account/bank_account.dart';
+import 'package:vyapar/view/menu_screen/cash_&_bank/cash_in_hand/cash_in_hand.dart';
+import 'package:vyapar/view/menu_screen/cash_&_bank/cheques/cheques.dart';
+import 'package:vyapar/view/menu_screen/cash_&_bank/loan_account/loan_account.dart';
 import 'package:vyapar/view/menu_screen/menu_screen.dart';
 import 'package:vyapar/view/menu_screen/my_business/Report/report.dart';
 import 'package:vyapar/view/menu_screen/my_business/sales/add_sale/add_sales.dart';
@@ -41,8 +47,14 @@ class MyApp extends StatelessWidget {
               // HomeScreen()
               // ReportScreen()
               //  SaleOrderScreen(),
-              AddBankAccount(),
-          // BankAccountsPage(),
+              // AddBankAccount(),
+              // Cheques(),
+              // LoanAccountPage(),
+              // ApplyLoanPage(),
+              // CashInHand(),
+              // BankAccountsPage(),
+              // DashBoardScreen(),
+              ItemPage(),
           // MenuScreen(),
         );
       },

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:vyapar/view/menu_screen/cash_&_bank/apply_loan/apply_loan.dart';
 import 'package:vyapar/view/menu_screen/cash_&_bank/bank_account/bank_account.dart';
+import 'package:vyapar/view/menu_screen/cash_&_bank/cash_in_hand/cash_in_hand.dart';
+import 'package:vyapar/view/menu_screen/cash_&_bank/cheques/cheques.dart';
+import 'package:vyapar/view/menu_screen/cash_&_bank/loan_account/loan_account.dart';
 import 'package:vyapar/view/menu_screen/my_business/Report/report.dart';
 import 'package:vyapar/view/menu_screen/my_business/sales/delivery_challan/delivery_challan.dart';
 import 'package:vyapar/view/menu_screen/my_business/sales/estimate_details/estimate_details.dart';
@@ -633,14 +637,43 @@ class _MenuScreenState extends State<MenuScreen> {
                           ),
                         );
                       }),
-                      buildGridItem(Icons.account_balance_wallet_outlined,
-                          'Cash In-Hand', () {}),
                       buildGridItem(
-                          Icons.manage_history_sharp, 'Icons.notes', () {}),
-                      buildGridItem(Icons.playlist_add_circle_outlined,
-                          'Loan Account', () {}),
+                          Icons.account_balance_wallet_outlined, 'Cash In-Hand',
+                          () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CashInHand(),
+                          ),
+                        );
+                      }),
+                      buildGridItem(Icons.note, 'Cheques', () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Cheques(),
+                          ),
+                        );
+                      }),
                       buildGridItem(
-                          Icons.currency_rupee_outlined, 'Apply Loan', () {}),
+                          Icons.playlist_add_circle_outlined, 'Loan Account',
+                          () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoanAccountPage(),
+                          ),
+                        );
+                      }),
+                      buildGridItem(Icons.currency_rupee_outlined, 'Apply Loan',
+                          () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ApplyLoanPage(),
+                          ),
+                        );
+                      }),
                     ],
                   ),
                 ],
